@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Control with Kasay.DependencyProperty", "Control with Kasay.DependencyProperty", "{8BD74BE5-685A-4A9A-92B1-C8F9A04207CE}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample.DependencyPropertyWPF", "Sample.DependencyPropertyWPF\Sample.DependencyPropertyWPF.csproj", "{14156408-CBBA-4393-A9D5-F3BC13811CA7}"
 EndProject
 Global

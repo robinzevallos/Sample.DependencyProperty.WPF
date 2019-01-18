@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <StackPanel Margin="20">
-        <local:DemoControl1 TextTag="Tag" ForegroundTag="Red" />
-        <local:DemoControl2 TextTag="Lola" ForegroundTag="Blue" />
+        <local:DemoControl1 TextTag="Name" ForegroundTag="Gray" />
+        <local:DemoControl2 TextTag="Address" ForegroundTag="IndianRed" />
     </StackPanel>
 </Window>
