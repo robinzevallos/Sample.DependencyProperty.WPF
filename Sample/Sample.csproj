@@ -1,20 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\Kasay.DependencyProperty.WPF.Fody.1.0.0\build\Kasay.DependencyProperty.WPF.Fody.props" Condition="Exists('..\packages\Kasay.DependencyProperty.WPF.Fody.1.0.0\build\Kasay.DependencyProperty.WPF.Fody.props')" />
+  <Import Project="..\packages\Kasay.DependencyProperty.WPF.Fody.1.0.3\build\Kasay.DependencyProperty.WPF.Fody.props" Condition="Exists('..\packages\Kasay.DependencyProperty.WPF.Fody.1.0.3\build\Kasay.DependencyProperty.WPF.Fody.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{14156408-CBBA-4393-A9D5-F3BC13811CA7}</ProjectGuid>
+    <ProjectGuid>{6E9D88EA-B9FB-413C-87BD-4A66AA0A0A85}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Sample.DependencyPropertyWPF</RootNamespace>
-    <AssemblyName>Sample.DependencyPropertyWPF</AssemblyName>
+    <RootNamespace>Sample</RootNamespace>
+    <AssemblyName>Sample</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
   </PropertyGroup>
@@ -38,8 +39,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Kasay.DependencyProperty.WPF, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Kasay.DependencyProperty.WPF.Fody.1.0.0\lib\netstandard2.0\Kasay.DependencyProperty.WPF.dll</HintPath>
+    <Reference Include="Kasay.DependencyProperty.WPF, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Kasay.DependencyProperty.WPF.Fody.1.0.3\lib\netstandard2.0\Kasay.DependencyProperty.WPF.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -61,14 +62,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="Control with Kasay.DependencyProperty\DemoControl2.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Control without Kasay.DependencyProperty\DemoControl1.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
+    <Compile Include="Traditional Method\DemoControl.xaml.cs">
+      <DependentUpon>DemoControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="With Kasay.DependencyProperty\DemoControl.xaml.cs">
+      <DependentUpon>DemoControl.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -77,16 +76,18 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Control with Kasay.DependencyProperty\DemoControl2.xaml.cs">
-      <DependentUpon>DemoControl2.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Control without Kasay.DependencyProperty\DemoControl1.xaml.cs">
-      <DependentUpon>DemoControl1.xaml</DependentUpon>
-    </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Traditional Method\DemoControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="With Kasay.DependencyProperty\DemoControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -122,6 +123,6 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Fody.3.3.5\build\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Fody.3.3.5\build\Fody.targets'))" />
-    <Error Condition="!Exists('..\packages\Kasay.DependencyProperty.WPF.Fody.1.0.0\build\Kasay.DependencyProperty.WPF.Fody.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Kasay.DependencyProperty.WPF.Fody.1.0.0\build\Kasay.DependencyProperty.WPF.Fody.props'))" />
+    <Error Condition="!Exists('..\packages\Kasay.DependencyProperty.WPF.Fody.1.0.3\build\Kasay.DependencyProperty.WPF.Fody.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Kasay.DependencyProperty.WPF.Fody.1.0.3\build\Kasay.DependencyProperty.WPF.Fody.props'))" />
   </Target>
 </Project>
